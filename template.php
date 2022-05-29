@@ -142,11 +142,28 @@
 		}
 
 		/* Dynamic */
+		<?php
+		$slide_p_color       = sanitize_hex_color( get_post_meta( get_the_ID(), 'presentation-color', true ) );
+		$slide_p_font_size   = (int) get_post_meta( get_the_ID(), 'presentation-font-size', true );
+		$slide_p_font_family = get_post_meta( get_the_ID(), 'presentation-font-family', true );
 
+		$slide_p_font_family_heading = get_post_meta( get_the_ID(), 'presentation-font-family-heading', true );
+		$slide_p_font_weight_heading = get_post_meta( get_the_ID(), 'presentation-font-weight-heading', true );
+
+		$slide_p_background_color    = sanitize_hex_color( get_post_meta( get_the_ID(), 'presentation-background-color', true ) );
+		$slide_p_background_gradient = sanitize_hex_color( get_post_meta( get_the_ID(), 'presentation-background-gradient', true ) );
+
+		$slide_p_background_url      = get_post_meta( get_the_ID(), 'presentation-background-url', true );
+		$slide_p_background_position = get_post_meta( get_the_ID(), 'presentation-background-position', true );
+		$slide_p_background_opacity  = (int) get_post_meta( get_the_ID(), 'presentation-background-opacity', true );
+
+		$slide_p_vertical_padding   = get_post_meta( get_the_ID(), 'presentation-vertical-padding', true );
+		$slide_p_horizontal_padding = get_post_meta( get_the_ID(), 'presentation-horizontal-padding', true );
+		?>
 		.reveal {
-			color: <?php echo sanitize_hex_color( get_post_meta( get_the_ID(), 'presentation-color', true ) ) ?: '#000'; ?>;
-			font-size: <?php echo (int) get_post_meta( get_the_ID(), 'presentation-font-size', true ) ?: 42; ?>px;
-			font-family: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-font-family', true ) ) ?: 'Helvetica, sans-serif'; ?>;
+			color: <?php echo esc_html( $slide_p_color ? $slide_p_color : '#000' ); ?>;
+			font-size: <?php echo esc_html( $slide_p_font_size ? $slide_p_font_size : 42 ); ?>px;
+			font-family: <?php echo esc_html( $slide_p_font_family ? $slide_p_font_family : 'Helvetica, sans-serif' ); ?>;
 		}
 
 		.reveal h1,
@@ -155,14 +172,14 @@
 		.reveal h4,
 		.reveal h5,
 		.reveal h6 {
-			font-family: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-font-family-heading', true ) ) ?: 'inherit'; ?>;
-			font-weight: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-font-weight-heading', true ) ) ?: 'inherit'; ?>;
+			font-family: <?php echo esc_html( $slide_p_font_family_heading ? $slide_p_font_family_heading : 'inherit' ); ?>;
+			font-weight: <?php echo esc_html( $slide_p_font_weight_heading ? $slide_p_font_weight_heading : 'inherit' ); ?>;
 		}
 
 		/* Extra specificity to override reveal background. */
 		.reveal .slide-background {
-			background-color: <?php echo sanitize_hex_color( get_post_meta( get_the_ID(), 'presentation-background-color', true ) ) ?: '#fff'; ?>;
-			background-image: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-background-gradient', true ) ) ?: 'none'; ?>;
+			background-color: <?php echo esc_html( $slide_p_background_color ? $slide_p_background_color : '#fff' ); ?>;
+			background-image: <?php echo esc_html( $slide_p_background_gradient ? $slide_p_background_gradient : 'none' ); ?>;
 		}
 
 		/* If a background color is set, disable the global gradient. */
@@ -171,33 +188,33 @@
 		}
 
 		.reveal .slide-background .slide-background-content {
-			background-image: url("<?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-background-url', true ) ) ?: 'none'; ?>");
-			background-position: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-background-position', true ) ) ?: '50% 50%'; ?>;
-			opacity: <?php echo (int) get_post_meta( get_the_ID(), 'presentation-background-opacity', true ) / 100 ?: 1; ?>;
+			background-image: url("<?php echo esc_html( $slide_p_background_url ? $slide_p_background_url : 'none' ); ?>");
+			background-position: <?php echo esc_html( $slide_p_background_position ? $slide_p_background_position : '50% 50%' ); ?>;
+			opacity: <?php echo esc_html( ( $slide_p_background_opacity / 100 ) ? ( $slide_p_background_opacity / 100 ) : 1 ); ?>;
 		}
 
 		.reveal .slides section.wp-block-slide-slide {
 			top: auto !important;
-			padding-top: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-vertical-padding', true ) ) ?: '0.2em'; ?> !important;
-			padding-bottom: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-vertical-padding', true ) ) ?: '0.2em'; ?> !important;
-			padding-left: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-horizontal-padding', true ) ) ?: '0.2em'; ?> !important;
-			padding-right: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-horizontal-padding', true ) ) ?: '0.2em'; ?> !important;
+			padding-top: <?php echo esc_html( $slide_p_vertical_padding ? $slide_p_vertical_padding : '0.2em' ); ?> !important;
+			padding-bottom: <?php echo esc_html( $slide_p_vertical_padding ? $slide_p_vertical_padding : '0.2em' ); ?> !important;
+			padding-left: <?php echo esc_html( $slide_p_horizontal_padding ? $slide_p_horizontal_padding : '0.2em' ); ?> !important;
+			padding-right: <?php echo esc_html( $slide_p_horizontal_padding ? $slide_p_horizontal_padding : '0.2em' ); ?> !important;
 		}
 
 		.presentation-contain .alignfull {
-			margin: 0 calc( -50px - <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-horizontal-padding', true ) ) ?: '0.2em'; ?> );
+			margin: 0 calc( -50px - <?php echo esc_html( $slide_p_horizontal_padding ? $slide_p_horizontal_padding : '0.2em' ); ?> );
 			max-width: none;
 		}
 
 		.reveal .slides > section,
 		.reveal .slides > section > section {
-			padding: <?php echo esc_html( get_post_meta( get_the_ID(), 'presentation-vertical-padding', true ) ) ?: '0.2em'; ?> 0;
+			padding:  <?php echo esc_html( $slide_p_vertical_padding ? $slide_p_vertical_padding : '0.2em' ); ?> 0;
 		}
 	</style>
 	<style>
 		<?php
 			// Allow quotes.
-			echo str_replace( '<', '', get_post_meta( get_the_ID(), 'presentation-css', true ) );
+			echo str_replace( '<', '', get_post_meta( get_the_ID(), 'presentation-css', true ) ); //phpcs:ignore.
 		?>
 	</style>
 </head>
