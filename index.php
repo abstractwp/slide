@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Plugin Name: Slides & Presentations
  * Plugin URI:  https://wordpress.org/plugins/slide/
@@ -10,6 +9,8 @@
  * Text Domain: slide
  * License:     GPL-2.0+
  */
+
+define( 'SLIDER_VER', '0.039' );
 
 add_action(
 	'admin_enqueue_scripts',
@@ -111,7 +112,7 @@ add_filter(
 			return $path;
 		}
 
-		if ( isset( $_GET['speaker'] ) ) {
+		if ( isset( $_GET['speaker'] ) ) { // phpcs:ignore.
 			return dirname( __FILE__ ) . '/speaker.php';
 		}
 
@@ -142,7 +143,7 @@ add_action(
 			}
 		}
 
-		if ( isset( $_GET['speaker'] ) ) {
+		if ( isset( $_GET['speaker'] ) ) { // phpcs:ignore.
 			wp_enqueue_script(
 				'slide-speaker',
 				plugins_url( 'speaker.js', __FILE__ ),
@@ -186,24 +187,24 @@ add_action(
 		);
 
 		$post_id = get_the_ID();
-		$contain = (bool) get_post_meta( $post_id, 'presentation-contain', true ) ?: false;
+		$contain = (bool) get_post_meta( $post_id, 'presentation-contain', true ) ? get_post_meta( $post_id, 'presentation-contain', true ) : false;
 
 		wp_localize_script(
 			'slide-template',
 			'slideTemplate',
 			array(
 				'revealSettings' => array(
-					'transition'           => get_post_meta( $post_id, 'presentation-transition', true ) ?: 'none',
-					'backgroundTransition' => get_post_meta( $post_id, 'presentation-background-transition', true ) ?: 'none',
-					'transitionSpeed'      => get_post_meta( $post_id, 'presentation-transition-speed', true ) ?: 'default',
-					'controls'             => (bool) get_post_meta( $post_id, 'presentation-controls', true ) ?: false,
-					'progress'             => (bool) get_post_meta( $post_id, 'presentation-progress', true ) ?: false,
+					'transition'           => get_post_meta( $post_id, 'presentation-transition', true ) ? get_post_meta( $post_id, 'presentation-transition', true ) : 'none',
+					'backgroundTransition' => get_post_meta( $post_id, 'presentation-background-transition', true ) ? get_post_meta( $post_id, 'presentation-background-transition', true ) : 'none',
+					'transitionSpeed'      => get_post_meta( $post_id, 'presentation-transition-speed', true ) ? get_post_meta( $post_id, 'presentation-transition-speed', true ) : 'default',
+					'controls'             => (bool) get_post_meta( $post_id, 'presentation-controls', true ) ? get_post_meta( $post_id, 'presentation-controls', true ) : false,
+					'progress'             => (bool) get_post_meta( $post_id, 'presentation-progress', true ) ? get_post_meta( $post_id, 'presentation-progress', true ) : false,
 					'hash'                 => true,
 					'history'              => true,
 					'preloadIframes'       => true,
 					'hideAddressBar'       => true,
 					'height'               => 720,
-					'width'                => (int) get_post_meta( $post_id, 'presentation-width', true ) ?: 960,
+					'width'                => (int) get_post_meta( $post_id, 'presentation-width', true ) ? get_post_meta( $post_id, 'presentation-width', true ) : 960,
 					'margin'               => $contain ? 0 : 0.08,
 					'keyboard'             => array(
 						'38' => 'prev',
@@ -225,12 +226,7 @@ add_action(
 			'3.8.0'
 		);
 
-		if ( isset( $_GET['print-pdf'] ) ) {
-			// wp_add_inline_script(
-			// 'slide-reveal',
-			// 'window.print()'
-			// );
-
+		if ( isset( $_GET['print-pdf'] ) ) { // phpcs:ignore.
 			wp_enqueue_style(
 				'slide-reveal-pdf',
 				plugins_url( 'reveal/pdf.min.css', __FILE__ ),
@@ -245,7 +241,8 @@ add_action(
 			wp_enqueue_style(
 				'slide-default-font',
 				$font_url,
-				array()
+				array(),
+				SLIDER_VER
 			);
 		}
 
@@ -255,7 +252,8 @@ add_action(
 			wp_enqueue_style(
 				'slide-heading-font',
 				$heading_font_url,
-				array()
+				array(),
+				SLIDER_VER
 			);
 		}
 
@@ -272,11 +270,11 @@ add_action(
 foreach ( array(
 	'load-post.php',
 	'load-post-new.php',
-) as $tag ) {
+) as $slide_tag ) {
 	add_action(
-		$tag,
+		$slide_tag,
 		function() {
-			if ( get_current_screen()->post_type !== 'presentation' ) {
+			if ( 'presentation' !== get_current_screen()->post_type ) {
 				return;
 			}
 
@@ -285,11 +283,11 @@ foreach ( array(
 			remove_theme_support( 'editor-font-sizes' );
 			add_theme_support( 'align-wide' );
 
-			if ( ! isset( $_GET['post'] ) ) {
+			if ( ! isset( $_GET['post'] ) ) {  // phpcs:ignore.
 				return;
 			}
 
-			$post = get_post( $_GET['post'] );
+			$post = get_post( $_GET['post'] ); // phpcs:ignore.
 
 			if ( ! $post ) {
 				return;
@@ -322,7 +320,7 @@ foreach ( array(
 add_filter(
 	'block_editor_settings',
 	function( $settings ) {
-		if ( get_current_screen()->post_type !== 'presentation' ) {
+		if ( 'presentation' !== get_current_screen()->post_type ) {
 			return $settings;
 		}
 
@@ -335,11 +333,11 @@ add_filter(
 add_filter(
 	'default_content',
 	function( $post_content, $post ) {
-		if ( $post->post_type !== 'presentation' ) {
+		if ( 'presentation' !== $post->post_type ) {
 			return $post_content;
 		}
 
-		return file_get_contents( __DIR__ . '/default-content.html' );
+		return file_get_contents( __DIR__ . '/default-content.html' ); // phpcs:ignore.
 	},
 	10,
 	2
@@ -352,7 +350,7 @@ add_filter(
 			return $block_content;
 		}
 
-		if ( $block['blockName'] !== 'slide/slide' ) {
+		if ( 'slide/slide' !== $block['blockName'] ) {
 			return $block_content;
 		}
 

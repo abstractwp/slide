@@ -29,7 +29,10 @@
 	</rule>
 
 	<!-- Use WordPress "Docs" Coding Standards. -->
-	<rule ref="WordPress-Docs" />
+	<rule ref="WordPress-Docs">
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+		<exclude name="Squiz.Commenting.FileComment.WrongStyle"/>
+	</rule>
 
 	<!-- The minimum supported WordPress version. This should match what's listed in style.css. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
