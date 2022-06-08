@@ -23,7 +23,7 @@ add_action(
 
 		wp_enqueue_script(
 			'slide',
-			plugins_url( 'index.js', __FILE__ ),
+			plugins_url( 'build/js/index.js', __FILE__ ),
 			array(
 				'wp-element',
 				'wp-i18n',
@@ -38,7 +38,7 @@ add_action(
 				'wp-compose',
 				'wp-hooks',
 			),
-			filemtime( dirname( __FILE__ ) . '/index.js' ),
+			filemtime( dirname( __FILE__ ) . '/build/js/index.js' ),
 			true
 		);
 
@@ -146,9 +146,9 @@ add_action(
 		if ( isset( $_GET['speaker'] ) ) { // phpcs:ignore.
 			wp_enqueue_script(
 				'slide-speaker',
-				plugins_url( 'speaker.js', __FILE__ ),
+				plugins_url( 'build/js/speaker.js', __FILE__ ),
 				array(),
-				filemtime( dirname( __FILE__ ) . '/speaker.js' ),
+				filemtime( dirname( __FILE__ ) . '/build/js/speaker.js' ),
 				true
 			);
 
@@ -180,9 +180,9 @@ add_action(
 
 		wp_enqueue_script(
 			'slide-template',
-			plugins_url( 'template.js', __FILE__ ),
+			plugins_url( 'build/js/template.js', __FILE__ ),
 			array( 'slide-reveal', 'slide-reveal-notes', 'wp-i18n' ),
-			filemtime( dirname( __FILE__ ) . '/template.js' ),
+			filemtime( dirname( __FILE__ ) . '/build/js/template.js' ),
 			true
 		);
 
