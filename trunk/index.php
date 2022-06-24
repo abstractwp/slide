@@ -1,13 +1,14 @@
 <?php
 /*
- * Plugin Name: Slides & Presentations
+ * Plugin Name: Slide
  * Plugin URI:  https://wordpress.org/plugins/slide/
- * Description: Allows you to create presentations with the block editor.
- * Version:     0.0.39
- * Author:      Ella van Durpe
- * Author URI:  https://ellavandurpe.com
+ * Description: Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
+ * Version:     0.0.40
+ * Author:      ellatrix, wordpressdotorg, AbstractWP, isvictorious, danhthong, arlyons
+ * Author URI:  https://www.abstractwp.com/
  * Text Domain: slide
- * License:     GPL-2.0+
+ * License:     GPL-2.0-or-later
+ * License URI  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 define( 'SLIDER_VER', '0.039' );

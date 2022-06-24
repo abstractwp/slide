@@ -1,15 +1,15 @@
 # Slides & Presentations
 
-    Contributors:      ellatrix, wordpressdotorg
-    Tags:              presentations, slides, powerpoint, keynote
+    Contributors:      ellatrix, wordpressdotorg, isvictorious, danhthong, arlyons
+    Tags:              presentations, slides, powerpoint, keynote, gutenberg, blocks
     Requires at least: 5.3
     Requires PHP:      5.6
     Tested up to:      5.3
-    Stable tag:        0.0.39
+    Stable tag:        0.0.40
     License:           GPL-2.0-or-later
     License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Allows you to create presentations with the WordPress block editor.
+Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
 
 ## Description
 
