@@ -11,7 +11,7 @@
  * License URI  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-define( 'SLIDER_VER', '0.039' );
+define( 'SLIDER_VER', '0.040' );
 
 add_action(
 	'admin_enqueue_scripts',

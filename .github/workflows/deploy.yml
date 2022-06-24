@@ -22,3 +22,4 @@ jobs:
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         ASSETS_DIR: assets
         README_NAME: readme.md
+        VERSION: '0.0.40'
