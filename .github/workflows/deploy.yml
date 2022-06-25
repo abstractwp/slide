@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@master
     - name: Build js
       run: |
-        cd trunk
         npm install
         npm run build
     - uses: actions/checkout@master
@@ -20,6 +19,5 @@ jobs:
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-        ASSETS_DIR: assets
         README_NAME: readme.md
         VERSION: '0.0.40'
