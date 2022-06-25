@@ -383,7 +383,15 @@ registerBlockType( 'slide/slide', {
 							},
 						} )
 				),
-				e( 'section', { className }, e( InnerBlocks ) )
+				e(
+					'section',
+					{ className },
+					e( InnerBlocks, {
+						templateInsertUpdatesSelection: true,
+						template: [ [ 'core/paragraph' ] ],
+						templateLock: false,
+					} )
+				)
 			),
 			e( TextareaControl, {
 				label: __( 'Speaker notes', 'slide' ),
