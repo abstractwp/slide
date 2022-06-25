@@ -210,6 +210,14 @@
 		.reveal .slides > section > section {
 			padding:  <?php echo esc_html( $slide_p_vertical_padding ? $slide_p_vertical_padding : '0.2em' ); ?> 0;
 		}
+		.admin-bar .reveal {
+			margin-top: 32px;
+			height: calc(100% - 32px);
+		}
+
+		.admin-bar .reveal .slides {
+			margin-top: 32px;
+		}
 	</style>
 	<style>
 		<?php
@@ -218,7 +226,7 @@
 		?>
 	</style>
 </head>
-<body>
+<body <?php echo body_class( ); ?>>
 	<div class="reveal">
 		<div class="slides">
 			<?php the_content(); ?>
