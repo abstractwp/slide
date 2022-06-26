@@ -59,6 +59,11 @@ registerPlugin( 'slide', {
 		const meta = useSelect( ( select ) =>
 			select( 'core/editor' ).getEditedPostAttribute( 'meta' )
 		);
+
+		if ( meta[ 'presentation-controls' ] === '' ) {
+			meta[ 'presentation-controls' ] = 'true';
+		}
+
 		const link = useSelect(
 			( select ) => select( 'core/editor' ).getCurrentPost( 'meta' ).link
 		);
