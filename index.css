@@ -33,17 +33,21 @@
 	top: -1px;
 }
 
-.block-editor-block-list__layout .block-editor-block-list__block[data-align=left] .block-editor-block-list__block-edit {
+.block-editor-block-list__layout
+	.block-editor-block-list__block[data-align="left"]
+	.block-editor-block-list__block-edit {
 	float: left;
 	margin-right: 1em;
 }
 
-.block-editor-block-list__layout .block-editor-block-list__block[data-align=right] .block-editor-block-list__block-edit {
+.block-editor-block-list__layout
+	.block-editor-block-list__block[data-align="right"]
+	.block-editor-block-list__block-edit {
 	float: right;
 	margin-left: 1em;
 }
 
-.wp-block[data-align=wide] {
+.wp-block[data-align="wide"] {
 	max-width: none;
 }
 
@@ -64,16 +68,17 @@ body {
 }
 
 div[data-type="slide/slide"]:before {
-	content: counter( slidecounter );
+	content: counter(slidecounter);
 	counter-increment: slidecounter;
 	font-size: 24px;
 }
 
 div.is-selected[data-type="slide/slide"]:before {
-	content: '';
+	content: "";
 }
 
-.block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
+.block-editor-default-block-appender
+	textarea.block-editor-default-block-appender__content {
 	font-size: inherit;
 	height: auto !important;
 }
@@ -106,7 +111,7 @@ div.is-selected[data-type="slide/slide"]:before {
 	padding: 0.2em;
 }
 
-html:not( .presentation-contain ) .wp-block-slide-slide {
+html:not(.presentation-contain) .wp-block-slide-slide {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -143,13 +148,20 @@ div[data-type="slide/slide"] div[data-block] > .components-notice {
 }
 
 /* Hide appender displayed if a block or previous block is selected. */
-.block-editor-inner-blocks .block-editor-block-list__block.is-selected + .block-list-appender,
-.is-selected .block-editor-inner-blocks .block-editor-block-list__block + .block-list-appender {
+.block-editor-inner-blocks
+	.block-editor-block-list__block.is-selected
+	+ .block-list-appender,
+.is-selected
+	.block-editor-inner-blocks
+	.block-editor-block-list__block
+	+ .block-list-appender {
 	display: none;
 }
 
 /* Show appender if it's at the end of a list */
-.block-editor-inner-blocks .block-editor-block-list__block.is-selected + .block-list-appender:last-child {
+.block-editor-inner-blocks
+	.block-editor-block-list__block.is-selected
+	+ .block-list-appender:last-child {
 	display: block;
 	height: 0;
 	margin-top: 0;
