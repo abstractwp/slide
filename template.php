@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
 		if ( /[?&]receiver/i.test( window.location.search ) ) {
 			document.documentElement.classList.add( 'receiver' );
@@ -217,6 +218,16 @@
 
 		.admin-bar .reveal .slides {
 			margin-top: 32px;
+		}
+		.receiver .admin-bar .reveal {
+			margin-top: 0;
+			height: 100%;
+		}
+		.receiver .admin-bar .reveal .slides {
+			margin-top: 0;
+		}
+		.receiver .reveal .controls, .reveal .progress {
+			display: none !important;
 		}
 	</style>
 	<style>

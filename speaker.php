@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script>
 			if ( /[?&]receiver/i.test( window.location.search ) ) {
 				document.documentElement.classList.add( 'receiver' );
@@ -15,7 +16,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="speaker-view">
 		<div id="slide-container">
 			<div id="current-slide-container"><div id="current-slide"></div></div>
 			<div id="upcoming-slide-container"><div id="upcoming-slide"><span class="overlay-element label"><?php esc_html_e( 'Upcoming', 'slide' ); ?></span></div></div>

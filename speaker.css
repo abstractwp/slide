@@ -1,6 +1,8 @@
-body {
+.speaker-view {
 	font-family: Helvetica;
 	font-size: 18px;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 #wpadminbar {
@@ -192,4 +194,60 @@ button {
 
 .speaker-controls-time > div {
 	margin-bottom: 10px;
+}
+#current-slide iframe .admin-bar .reveal {
+	height: 100%;
+	margin-top: 0;
+}
+#current-slide iframe .admin-bar .reveal .slides {
+	margin-top: 0;
+}
+/* For mobile */
+@media only screen and (max-width: 768px) {
+	#slide-container,
+	#upcoming-slide-container,
+	.speaker-controls-time,
+	.speaker-controls-notes {
+		width: 100%;
+	}
+
+	#current-slide-container,
+	#upcoming-slide-container {
+		padding: 0;
+	}
+
+	#current-slide .label {
+		position: relative;
+	}
+
+	#upcoming-slide .label {
+		bottom: auto;
+		top: 16px;
+	}
+
+	#current-slide {
+		padding-top: 75%;
+	}
+
+	#current-slide iframe,
+	#upcoming-slide iframe {
+		transform: none;
+	}
+
+	.speaker-controls-time > div {
+		margin-bottom: 16px;
+	}
+	.speaker-controls-time .label {
+		width: 50%;
+		float: left;
+		margin-bottom: 16px;
+	}
+	.speaker-controls-time .timer,
+	.speaker-controls-time .clock,
+	.speaker-controls-time .slide-count {
+		font-size: 1em;
+		width: 50%;
+		float: left;
+		margin-bottom: 16px;
+	}
 }
