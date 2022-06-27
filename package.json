@@ -12,8 +12,8 @@
     "lint:js": "wp-scripts lint-js ./src/js",
     "format:js": "wp-scripts format ./src/js",
     "start": "parcel watch ./src/js/entry.js -d ./build/js/ --out-file ./build/js/index.js",
-    "build:index": "parcel build ./src/js/entry.js --no-minify -d ./ --out-file ./build/js/index.js",
-    "build": "npm run build:index && wp-scripts build ./src/js/speaker.js ./src/js/template.js --output-path=./build/js/"
+    "build:index": "parcel build ./src/js/entry.js -d ./build/js/ --out-file ./build/js/index.js",
+    "build": "wp-scripts build ./src/js/speaker.js ./src/js/template.js --output-path=./build/js/ && npm run build:index"
   },
   "repository": {
     "type": "git",
