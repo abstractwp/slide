@@ -83,8 +83,8 @@ window.addEventListener( 'DOMContentLoaded', () => {
 
 	const fullscreenLi = document.createElement( 'li' );
 	const speakerLi = document.createElement( 'li' );
-	const fullscreenButton = document.createElement( 'button' );
-	const speakerButton = document.createElement( 'button' );
+	const fullscreenButton = document.createElement( 'a' );
+	const speakerButton = document.createElement( 'a' );
 	const fullscreenText = document.createTextNode(
 		__( 'Fullscreen', 'slide' )
 	);
@@ -92,12 +92,23 @@ window.addEventListener( 'DOMContentLoaded', () => {
 		__( 'Speaker View', 'slide' )
 	);
 
-	fullscreenButton.appendChild( fullscreenText );
+
+	fullscreenButton.classList.add('dashicons');
+  fullscreenButton.classList.add('dashicons-fullscreen-alt');
+
+	speakerButton.classList.add('dashicons');
+	speakerButton.classList.add('dashicons-migrate');
+
+	fullscreenButton.classList.add('ab-item');
+	speakerButton.classList.add('ab-item');
+
+
+	fullscreenButton.appendChild(fullscreenText);
 	fullscreenLi.appendChild( fullscreenButton );
 	fullscreenLi.classList.add( 'slide-button' );
 	bar.appendChild( fullscreenLi );
 
-	speakerButton.appendChild( speakerText );
+	speakerButton.appendChild(speakerText);
 	speakerLi.appendChild( speakerButton );
 	speakerLi.classList.add( 'slide-button' );
 	bar.appendChild( speakerLi );

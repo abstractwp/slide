@@ -12,15 +12,34 @@
 	<style>
 		ul#wp-admin-bar-root-default li.slide-button {
 			margin: 0 5px;
+			cursor: pointer;
+			display: block;
 		}
 
-		ul#wp-admin-bar-root-default li.slide-button > button {
-			border-radius: 3px;
-			line-height: 24px;
-			border: none;
-			padding: 0 5px;
-			background: #fff;
-			font-weight: bold;
+		ul#wp-admin-bar-root-default li.slide-button .dashicons::before {
+			top: 2px;
+		}
+
+		@media screen and (max-width: 782px) {
+			ul#wp-admin-bar-root-default li.slide-button .dashicons {
+				text-indent: 100%;
+				font-size: 0;
+				white-space: nowrap;
+				width: 52px;
+				padding: 0;
+				color: #a7aaad;
+				position: relative;
+			}
+			ul#wp-admin-bar-root-default li.slide-button .dashicons::before {
+				font: normal 32px/1 dashicons;
+				left: -52px;
+				top: 0;
+				width: 52px;
+				line-height: 1.33333333;
+				height: 46px!important;
+				text-align: center;
+				display: block;
+			}
 		}
 
 		#wpadminbar {
