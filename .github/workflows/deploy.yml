@@ -21,3 +21,4 @@ jobs:
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         README_NAME: readme.md
         VERSION: '0.0.40'
+        SLUG: 'presentation-block'

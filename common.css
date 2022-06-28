@@ -24,7 +24,7 @@
 
 .wp-block-slide-slide .wp-block-image {
 	/* Overridden in the editor... */
-	margin-bottom: .5em !important;
+	margin-bottom: 0.5em !important;
 }
 
 .wp-block-slide-slide figure {
@@ -85,12 +85,12 @@
 
 .wp-block-slide-slide blockquote.is-style-default {
 	padding-left: 1em;
-	border-left: .2em solid currentColor;
+	border-left: 0.2em solid currentColor;
 }
 
 .wp-block-slide-slide blockquote.is-style-large {
 	padding: 1em;
-	margin: 0 0 .5em;
+	margin: 0 0 0.5em;
 }
 
 .wp-block-slide-slide .wp-block-quote__citation {
@@ -109,14 +109,14 @@
 }
 
 .wp-block-gallery .blocks-gallery-item {
-	margin: 0 .5em .5em 0;
+	margin: 0 0.5em 0.5em 0;
 }
 
 .blocks-gallery-grid .blocks-gallery-image,
 .blocks-gallery-grid .blocks-gallery-item,
 .wp-block-gallery .blocks-gallery-image,
 .wp-block-gallery .blocks-gallery-item {
-	width: calc((100% - .5em)/2);
+	width: calc((100% - 0.5em) / 2);
 }
 
 .wp-block-slide-slide .wp-block-code .block-editor-plain-text {
@@ -170,4 +170,18 @@
 .alignwide video {
 	width: 100%;
 	display: block;
+}
+
+.oveflow-alert {
+	font-size: 16px;
+	color: red;
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+	box-shadow: none;
+	position: absolute;
+	left: 0;
+	bottom: -35px;
 }

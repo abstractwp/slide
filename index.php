@@ -1,7 +1,7 @@
 <?php
 /*
- * Plugin Name: Slide
- * Plugin URI:  https://wordpress.org/plugins/slide/
+ * Plugin Name: Presentation Block
+ * Plugin URI:  https://wordpress.org/plugins/presentation-block/
  * Description: Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
  * Version:     0.0.40
  * Author:      ellatrix, wordpressdotorg, AbstractWP, isvictorious, danhthong, arlyons
@@ -167,7 +167,7 @@ add_action(
 			'slide-reveal',
 			plugins_url( 'reveal/reveal.min.js', __FILE__ ),
 			array(),
-			'3.8.0',
+			'4.3.1',
 			true
 		);
 
@@ -224,7 +224,7 @@ add_action(
 			'slide-reveal',
 			plugins_url( 'reveal/reveal.min.css', __FILE__ ),
 			array(),
-			'3.8.0'
+			'4.3.1'
 		);
 
 		if ( isset( $_GET['print-pdf'] ) ) { // phpcs:ignore.
