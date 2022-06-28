@@ -36,7 +36,7 @@ Report issues, or collaborate, on [Github](https://github.com/abstractwp/slide).
 == Frequently Asked Questions ==
 
 = Does it support Gutenberg? =
-Yes, it's having a gutenberg block 'Presentation Block' listed on Common category of gutenberg block listed for 'Presentation' post type.
+Yes, the 'Presentation Block' can be found under the Common Gutenberg Blocks under the 'Presentation' post type.
 
 == Screenshots ==
 
