@@ -31,6 +31,7 @@
   "devDependencies": {
     "@wordpress/scripts": "^23.2.0",
     "parcel-bundler": "^1.12.4",
+    "prettier": "npm:wp-prettier@^2.2.1-beta-1",
     "semistandard": "*"
   }
 }

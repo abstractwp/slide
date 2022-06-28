@@ -424,9 +424,8 @@ registerPlugin( 'slide', {
 								return;
 							}
 
-							let [ x, y ] = meta[ backgroundPositionKey ].split(
-								' '
-							);
+							let [ x, y ] =
+								meta[ backgroundPositionKey ].split( ' ' );
 
 							x = parseFloat( x ) / 100;
 							y = parseFloat( y ) / 100;

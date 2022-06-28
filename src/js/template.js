@@ -27,9 +27,8 @@
 			return;
 		}
 
-		const targetBackgound = document.querySelectorAll(
-			'.slide-background'
-		)[ event.indexh ];
+		const targetBackgound =
+			document.querySelectorAll( '.slide-background' )[ event.indexh ];
 
 		if ( ! targetBackgound ) {
 			return;
@@ -46,8 +45,9 @@
 	if ( window.slideTemplate.contain ) {
 		const slidesElement = document.querySelector( '.slides' );
 		const backgroundsElement = document.querySelector( '.backgrounds' );
-
-		slidesElement.appendChild( backgroundsElement );
+		if ( backgroundsElement ) {
+			slidesElement.appendChild( backgroundsElement );
+		}
 		document.documentElement.classList.add( 'presentation-contain' );
 	} else {
 		document.querySelectorAll( '.alignfull' ).forEach( ( element ) => {
@@ -92,23 +92,21 @@ window.addEventListener( 'DOMContentLoaded', () => {
 		__( 'Speaker View', 'slide' )
 	);
 
+	fullscreenButton.classList.add( 'dashicons' );
+	fullscreenButton.classList.add( 'dashicons-fullscreen-alt' );
 
-	fullscreenButton.classList.add('dashicons');
-  fullscreenButton.classList.add('dashicons-fullscreen-alt');
+	speakerButton.classList.add( 'dashicons' );
+	speakerButton.classList.add( 'dashicons-migrate' );
 
-	speakerButton.classList.add('dashicons');
-	speakerButton.classList.add('dashicons-migrate');
+	fullscreenButton.classList.add( 'ab-item' );
+	speakerButton.classList.add( 'ab-item' );
 
-	fullscreenButton.classList.add('ab-item');
-	speakerButton.classList.add('ab-item');
-
-
-	fullscreenButton.appendChild(fullscreenText);
+	fullscreenButton.appendChild( fullscreenText );
 	fullscreenLi.appendChild( fullscreenButton );
 	fullscreenLi.classList.add( 'slide-button' );
 	bar.appendChild( fullscreenLi );
 
-	speakerButton.appendChild(speakerText);
+	speakerButton.appendChild( speakerText );
 	speakerLi.appendChild( speakerButton );
 	speakerLi.classList.add( 'slide-button' );
 	bar.appendChild( speakerLi );
