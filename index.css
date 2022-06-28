@@ -118,6 +118,11 @@ html:not(.presentation-contain) .wp-block-slide-slide {
 	outline: 1px dashed currentColor;
 }
 
+html:not(.presentation-contain) .wp-block-slide-slide.overflow-slide {
+	outline: 2px solid red;
+	margin-bottom: 20px;
+}
+
 .wp-block-slide-slide__background {
 	position: absolute;
 	top: 0;
