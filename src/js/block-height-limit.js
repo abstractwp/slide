@@ -26,7 +26,7 @@
 				if($(target).parent().height() > 720) {
 					$parent.addClass('overflow-slide');
 					$parent.find('.oveflow-alert').remove();
-					$parent.append('<span class="oveflow-alert">This slide is overflow content, please update content fit on slide</span>');
+					$parent.append('<span class="oveflow-alert">Overflow warning. Please adjust the amount or size of content to fit slide.</span>');
 				} else {
 					$parent.removeClass('overflow-slide');
 					$parent.find('.oveflow-alert').remove();
