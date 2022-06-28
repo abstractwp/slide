@@ -22,7 +22,7 @@ const ALLOWED_MEDIA_TYPES = [ 'image' ];
 const backgroundUrlKey = 'presentation-background-url';
 
 registerBlockType( 'slide/slide', {
-	title: __( 'Slide', 'slide' ),
+	title: __( 'Presentation Block', 'slide' ),
 	description: __(
 		'With this blocks you can form your slide deck! You can override document level setting for each slide block.'
 	),
