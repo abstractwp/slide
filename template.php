@@ -256,7 +256,7 @@
 		?>
 	</style>
 </head>
-<body <?php echo body_class( ); ?>>
+<body <?php echo body_class(); ?>>
 	<div class="reveal">
 		<div class="slides">
 			<?php the_content(); ?>

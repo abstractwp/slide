@@ -1,13 +1,13 @@
-# Slides & Presentations
+# Presentation Block
 
-    Contributors:      ellatrix, wordpressdotorg, isvictorious, danhthong, arlyons
-    Tags:              presentations, slides, powerpoint, keynote, gutenberg, blocks
-    Requires at least: 5.3
-    Requires PHP:      5.6
-    Tested up to:      5.3
-    Stable tag:        0.0.40
-    License:           GPL-2.0-or-later
-    License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Contributors:      ellatrix, wordpressdotorg, isvictorious, danhthong, arlyons
+Tags:              presentations, slides, powerpoint, keynote, gutenberg, blocks
+Requires at least: 5.3
+Requires PHP:      5.6
+Tested up to:      5.9
+Stable tag:        0.0.40
+License:           GPL-2.0-or-later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
 Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
 
@@ -15,7 +15,7 @@ Creates a custom post type “Presentation”, which will render as a presentati
 
 **This plugin requires WordPress version 5.3 or higher! It works best if you also have the [Gutenberg](https://wordpress.org/plugins/gutenberg/) plugin installed and up-to-date.**
 
-Report issues, or collaborate, on [Github](https://github.com/ellatrix/slides/issues).
+Report issues, or collaborate, on [Github](https://github.com/abstractwp/slide).
 
 * Creates a custom post type "Presentation", which will render as a presentation on the front end using [Reveal.js](https://revealjs.com).
 * Enables the block editor with a "Slide" block, which can be used as a container for each slide in the presentation.

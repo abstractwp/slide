@@ -1,7 +1,7 @@
 <?php
 /*
- * Plugin Name: Slide
- * Plugin URI:  https://wordpress.org/plugins/slide/
+ * Plugin Name: Presentation Block
+ * Plugin URI:  https://wordpress.org/plugins/presentation-block/
  * Description: Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
  * Version:     0.0.40
  * Author:      ellatrix, wordpressdotorg, AbstractWP, isvictorious, danhthong, arlyons
