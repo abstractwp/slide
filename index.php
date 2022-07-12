@@ -4,7 +4,7 @@
  * Plugin URI:  https://wordpress.org/plugins/presentation-block/
  * Description: Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
  * Version:     1.0.0
- * Author:      ellatrix, wordpressdotorg, AbstractWP, isvictorious, danhthong, arlyons
+ * Author:      AbstractWP
  * Author URI:  https://www.abstractwp.com/
  * Text Domain: slide
  * License:     GPL-2.0-or-later
