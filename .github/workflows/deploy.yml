@@ -1,11 +1,11 @@
 name: Deploy to WordPress.org
 on:
   push:
-    branches:
-    - trunk
+    tags:
+    - "*"
 jobs:
-  trunk:
-    name: Push to trunk
+  tag:
+    name: Push to tag
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
