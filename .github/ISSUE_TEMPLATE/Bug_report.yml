@@ -1,0 +1,68 @@
+name: Bug report
+description: Report a bug with the Presentation Block plugin
+body:
+
+    - type: textarea
+      attributes:
+          label: Screenshots, screen recordings
+          description: |
+              - Include a link to [automated screenshots on CBT](https://app.crossbrowsertesting.com/screenshots/run) using the latest major browsers.
+              - Include a link to [CloudApp](https://www.getcloudapp.com/screenshot-tool/)
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Expected Behavior
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Current Behavior
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Steps to Reproduce
+          placeholder: |
+              1. Go to '...'
+              2. Click on '...'
+              3. Scroll down to '...'
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Context (Environment)
+          description: |
+              Please include WordPress Version, WordPress Theme and Browser on your issue.
+          placeholder: |
+              1. WordPress Version
+              2. WordPress Theme
+              3. Browser
+      validations:
+          required: true
+
+    - type: dropdown
+      id: existing
+      attributes:
+          label: Please confirm that you have searched existing issues in the repo
+          multiple: true
+          options:
+              - 'Yes'
+              - 'No'
+      validations:
+          required: true
+
+    - type: dropdown
+      id: plugins
+      attributes:
+          label: Please confirm that you have tested with all plugins deactivated except "Presentation Block"
+          multiple: true
+          options:
+              - 'Yes'
+              - 'No'
+      validations:
+          required: true
