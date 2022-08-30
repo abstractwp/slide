@@ -4,7 +4,7 @@ Tags:              presentations, slides, powerpoint, keynote, gutenberg, blocks
 Requires at least: 5.3
 Requires PHP:      5.6
 Tested up to:      6.0
-Stable tag:        1.0.0
+Stable tag:        1.0.3
 License:           GPLv2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,7 +44,7 @@ Yes, the 'Presentation Block' can be found under the Common Gutenberg Blocks und
 
 == Changelog ==
 
-= 1.0.2 =
+= 1.0.3 =
 * Bug fixes to have build files.
 
 = 1.0.0 =
