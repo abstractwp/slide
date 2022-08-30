@@ -44,7 +44,7 @@ Yes, the 'Presentation Block' can be found under the Common Gutenberg Blocks und
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.2 =
 * Bug fixes to have build files.
 
 = 1.0.0 =
