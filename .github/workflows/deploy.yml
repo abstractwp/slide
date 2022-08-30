@@ -13,11 +13,9 @@ jobs:
       run: |
         npm install
         npm run build
-    - uses: actions/checkout@master
     - name: WordPress.org plugin update
       uses: 10up/action-wordpress-plugin-deploy@stable
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-        README_NAME: readme.md
         SLUG: 'presentation-block'

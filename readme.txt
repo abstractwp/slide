@@ -44,6 +44,9 @@ Yes, the 'Presentation Block' can be found under the Common Gutenberg Blocks und
 
 == Changelog ==
 
+= 1.0.1 =
+* Bug fixes to have build files.
+
 = 1.0.0 =
 * A change since the previous version of slide.
 * Bug fixes for slide.
