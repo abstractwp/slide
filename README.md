@@ -1,5 +1,7 @@
 # Presentation Block
 
+![Plugin Version](https://img.shields.io/wordpress/plugin/v/presentation-block.svg?maxAge=172800) ![Total Downloads](https://img.shields.io/wordpress/plugin/dt/presentation-block.svg?maxAge=172800) ![Plugin Rating](https://img.shields.io/wordpress/plugin/r/presentation-block.svg?maxAge=172800) ![WordPress Compatibility](https://img.shields.io/wordpress/v/presentation-block.svg?maxAge=172800) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://github.com/abstractwp/slide)
+
 ![Screenshot](https://demotest.abstractwp.com/wp-content/uploads/2022/08/presentation-block-screenshot.png)
 
 This plugin requires WordPress version 5.3 or higher! It works best if you also have the [Gutenberg](https://wordpress.org/plugins/gutenberg/) plugin installed and up-to-date.
