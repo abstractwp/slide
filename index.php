@@ -3,7 +3,7 @@
  * Plugin Name: Presentation Block
  * Plugin URI:  https://wordpress.org/plugins/presentation-block/
  * Description: Creates a custom post type “Presentation”, which will render as a presentation on the front end using Reveal.js.
- * Version:     1.0.0
+ * Version:     1.0.3
  * Author:      AbstractWP
  * Author URI:  https://www.abstractwp.com/
  * Text Domain: slide
@@ -13,7 +13,7 @@
 
 namespace presentation;
 
-define( 'PRESENTATION_VER', '1.0.0' );
+define( 'PRESENTATION_VER', '1.0.3' );
 
 /**
  * Add scripts and style for presentation post type on admin.
