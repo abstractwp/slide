@@ -7,12 +7,13 @@
       "index.js"
     ]
   },
+  "main": "./build/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "wp-scripts lint-js ./src/js",
     "format:js": "wp-scripts format ./src/js",
-    "start": "parcel watch ./src/js/entry.js -d ./build/js/ --out-file ./build/js/index.js",
-    "build:index": "parcel build ./src/js/entry.js -d ./build/js/ --out-file ./build/js/index.js",
+    "start": "parcel watch ./src/js/entry.js --dist-dir ./build/js/",
+    "build:index": "parcel build ./src/js/entry.js --dist-dir ./build/js/",
     "build": "wp-scripts build ./src/js/speaker.js ./src/js/template.js --output-path=./build/js/ && npm run build:index"
   },
   "repository": {
@@ -30,7 +31,7 @@
   "homepage": "https://github.com/abstractwp/slide#readme",
   "devDependencies": {
     "@wordpress/scripts": "^23.2.0",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0",
     "prettier": "npm:wp-prettier@^2.2.1-beta-1",
     "semistandard": "*"
   }
